@@ -1,20 +1,32 @@
 import React from "react"
+import { ThemeProvider } from 'styled-components'
 import { Link } from "gatsby-theme-material-ui";
-import { Typography } from "@material-ui/core";
 
 import Layout from "../components/Layout"
-import Image from "../components/CarouselImage"
 import SEO from "../components/Seo"
-import Carousel from "../components/Carousel";
+import Carousel from "../components/Carousel/Carousel";
+import theme from "../gatsby-theme-material-ui/theme";
+import AboutUs from "../components/AboutUs/AboutUs";
+import GlobalStyle from "../components/GlobalStyle";
+import Team from "../components/Team/Team";
+import Services from "../components/OurServices/Services";
+import Portfolio from "../components/Portfolio/Portfolio";
 
 const IndexPage: React.FC<{}> = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Typography variant="h1">JYN Hi there</Typography>
-    <p>Welcome to your new Gatsby site>>>>>>.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <>
+    <GlobalStyle />
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <Carousel />
+        <AboutUs />
+        <Team />
+        <Services />
+        <Portfolio />
+        <SEO title="Home" />
+        <Link to="/">Go to page 2</Link>
+      </Layout>
+    </ThemeProvider>
+  </>
 )
 
 export default IndexPage

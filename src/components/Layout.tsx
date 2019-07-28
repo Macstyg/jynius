@@ -1,15 +1,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components";
 
 import Header from "./Header/Header"
-import Carousel from "./Carousel";
+import styled from "styled-components";
 
-const Wrapper = styled('div')`
-  margin: 0 auto;
-  /* max-width: 960px; */
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 0;
+const Wrapper = styled.main`
+  width: 100%;
 `
 
 const Layout: React.FC<{}> = ({ children }) => {
@@ -26,15 +22,12 @@ const Layout: React.FC<{}> = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Carousel />
-      <Wrapper>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
+      <Wrapper>{children}</Wrapper>
+      <footer>
+        © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </Wrapper>
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
     </>
   )
 }
