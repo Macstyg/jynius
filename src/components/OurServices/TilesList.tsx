@@ -28,7 +28,7 @@ const services: Sevice[] = [
 const TilesList: React.FC = () => {
   return (
     <Grid container spacing={3}>
-      {services.map(({ heading, description, icon }) => <Grid item md={4}>
+      {services.map(({ heading, description, icon }) => <Grid item md={4} key={heading}>
         <Tile
           heading={heading}
           description={description}
