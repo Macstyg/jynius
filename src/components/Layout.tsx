@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header/Header"
 import styled from "styled-components";
+import Footer from "./Footer/Footer";
 
 const Wrapper = styled.main`
   width: 100%;
@@ -23,11 +24,7 @@ const Layout: React.FC<{}> = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Wrapper>{children}</Wrapper>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-          {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer />
     </>
   )
 }

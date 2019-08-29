@@ -1,6 +1,5 @@
 import React from "react"
 import { ThemeProvider } from 'styled-components'
-import { Link } from "gatsby-theme-material-ui";
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
@@ -27,7 +26,6 @@ const IndexPage: React.FC<{}> = () => (
         <Testimonials />
         <ContactUs />
         <SEO title="Home" />
-        <Link to="/">Go to page 2</Link>
       </Layout>
     </ThemeProvider>
   </>
