@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import React, { useState, useCallback, useLayoutEffect } from "react"
 import { Grid } from '@material-ui/core'
-import get from 'lodash/fp/get'
 import throttle from 'lodash/throttle'
 
 import { AppHeader } from "./Header.styles";
@@ -20,7 +19,7 @@ const Header: React.FC<Props> = () => {
       setHeight(node.getBoundingClientRect().height)
     }
   }, [])
-  const listener = (event) => {
+  const listener = () => {
     const { pageYOffset } = window
     if (pageYOffset > height / 2) {
       setIsSticky(true)
