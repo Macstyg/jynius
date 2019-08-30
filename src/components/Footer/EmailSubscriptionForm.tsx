@@ -18,19 +18,17 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const EmailSubscriptionForm: React.FC = () => {
   const [email, setEmail] = useState('')
-  const handleSubmit: React.FormEventHandler = (e) => {
-    e.preventDefault()
-  }
   const handleChangeEmail: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setEmail(e.target.value)
   }
   const { input } = useStyles()
   return (
-    <form noValidate onSubmit={handleSubmit}>
+    <form noValidate name="emailSubscription" data-netlify="true">
       <TextField
         fullWidth
         classes={{ root: input }}
         id="subscriptionEmail"
+        name="subscriptionEmail"
         label="Enter email"
         value={email}
         onChange={handleChangeEmail}

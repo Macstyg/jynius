@@ -32,12 +32,9 @@ const ContactUsForm = () => {
   const handleChange = (name: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [name]: event.target.value })
   }
-  const handleSubmit: React.FormEventHandler = (e) => {
-    e.preventDefault()
-  }
   const { input } = useStyles()
   return (
-    <form name="contactUs" data-netlify="true" noValidate onSubmit={handleSubmit}>
+    <form name="contactUs" data-netlify="true" noValidate>
       <Grid container spacing={3}>
         <Grid item sm={6}>
           <TextField
