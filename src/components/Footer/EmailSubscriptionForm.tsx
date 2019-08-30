@@ -23,7 +23,7 @@ const EmailSubscriptionForm: React.FC = () => {
   }
   const { input } = useStyles()
   return (
-    <form noValidate name="emailSubscription" data-netlify="true">
+    <form noValidate method="POST" name="emailSubscription" data-netlify="true">
       <TextField
         fullWidth
         classes={{ root: input }}
