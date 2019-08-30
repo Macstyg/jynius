@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { TextField, Grid, Button, makeStyles, Theme, createStyles } from '@material-ui/core';
-import { Form } from './ContactUs.styles';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     input: {
       background: '#f6f6f6',
@@ -38,13 +37,14 @@ const ContactUsForm = () => {
   }
   const { input } = useStyles()
   return (
-    <form noValidate onSubmit={handleSubmit}>
+    <form name="contactUs" data-netlify="true" noValidate onSubmit={handleSubmit}>
       <Grid container spacing={3}>
         <Grid item sm={6}>
           <TextField
             fullWidth
             classes={{ root: input }}
-            id="outlined-name"
+            id="firstname"
+            name="firstname"
             label="First name"
             value={values.firstName}
             onChange={handleChange('firstName')}
@@ -56,7 +56,8 @@ const ContactUsForm = () => {
           <TextField
             fullWidth
             classes={{ root: input }}
-            id="outlined-name"
+            id="lastname"
+            name="lastname"
             label="Last name"
             value={values.lastName}
             onChange={handleChange('lastName')}
@@ -68,7 +69,8 @@ const ContactUsForm = () => {
       <TextField
         fullWidth
         classes={{ root: input }}
-        id="outlined-name"
+        id="email"
+        name="email"
         label="Email"
         value={values.email}
         onChange={handleChange('email')}
@@ -78,7 +80,8 @@ const ContactUsForm = () => {
       <TextField
         fullWidth
         classes={{ root: input }}
-        id="outlined-name"
+        id="message"
+        name="message"
         label="Message"
         value={values.message}
         onChange={handleChange('message')}
