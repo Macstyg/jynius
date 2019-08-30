@@ -7,6 +7,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import imagesQuery from './images.query';
 import { Wrapper, AbsoluteBlock, Paragraph, CarouselButton, HEADER_HEIGHT } from './Carousel.styles';
 import { Typography } from '@material-ui/core';
+import { MainPageSectionIds } from '../../types';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -55,7 +56,7 @@ const Carousel: React.FC = () => {
     }
   `)
   return (
-    <Wrapper>
+    <Wrapper id={`${MainPageSectionIds.home}`}>
       <AbsoluteBlock>
         <Typography variant="h1">JYN web studio</Typography>
         <Paragraph variant="h3" component="p">

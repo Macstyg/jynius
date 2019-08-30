@@ -4,10 +4,11 @@ import SectionHeading from '../Common/SectionHeading';
 import SectionSubHeading from '../Common/SectionSubHeading';
 import ContactUsForm from './ContactUsForm';
 import { FormContainer } from './ContactUs.styles';
+import { MainPageSectionIds } from '../../types'
 
 const ContactUs: React.FC<{}> = () => {
   return (
-    <Wrapper>
+    <Wrapper id={`${MainPageSectionIds.contactUs}`}>
       <FormContainer container justify="center">
         <Section item xs={7}>
           <SectionHeading align="center">Get in touch</SectionHeading>

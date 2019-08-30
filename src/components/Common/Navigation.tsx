@@ -1,5 +1,7 @@
 import React from 'react'
-import { List, ListItem, ListItemText } from '@material-ui/core';
+import { List, ListItemText } from '@material-ui/core';
+import { MainPageSectionIds } from '../../types';
+import ListItemLink from './ListItemLink';
 
 interface Props {
   classNames?: string
@@ -8,21 +10,21 @@ interface Props {
 const Navigation: React.FC<Props> = ({ classNames = '' }) => {
   return (
     <List component="nav" aria-label="navigation" className={classNames}>
-      <ListItem button>
+      <ListItemLink href={`#${MainPageSectionIds.home}`}>
         <ListItemText primary="Home" />
-      </ListItem>
-      <ListItem button>
+      </ListItemLink>
+      <ListItemLink href={`#${MainPageSectionIds.about}`}>
         <ListItemText primary="About" />
-      </ListItem>
-      <ListItem button>
+      </ListItemLink>
+      <ListItemLink href={`#${MainPageSectionIds.whatWeDo}`}>
         <ListItemText primary="Services" />
-      </ListItem>
-      <ListItem button>
+      </ListItemLink>
+      <ListItemLink href={`#${MainPageSectionIds.portfolio}`}>
         <ListItemText primary="Portfolio" />
-      </ListItem>
-      <ListItem button>
+      </ListItemLink>
+      <ListItemLink href={`#${MainPageSectionIds.contactUs}`}>
         <ListItemText primary="Contacts" />
-      </ListItem>
+      </ListItemLink>
     </List>
   )
 }
