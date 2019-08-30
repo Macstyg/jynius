@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import Facebook from '../../images/icons/facebook.svg'
 import Linkedin from '../../images/icons/linkedin.svg'
-import Github from '../../images/icons/Github.svg'
+import Github from '../../images/icons/github.svg'
 import { Button, Grid } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/styles';
 import { GridJustification } from '@material-ui/core/Grid';
