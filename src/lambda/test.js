@@ -1,6 +1,6 @@
 export async function handler(event, context) {
   try {
-    console.log("event", event)
+    console.log("event", event.body.payload.event.name)
     console.log("context", context)
     return {
       statusCode: 200,
