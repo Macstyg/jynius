@@ -1,10 +1,12 @@
 export async function handler(event, context) {
   try {
-    console.log("event", JSON.parse(event.body).payload.event.name)
-    console.log("context", context)
+    const payload = event.body.split("=")[1]
+    console.log("payload", payload)
+    console.log("parsed payload", JSON.parse(payload))
+    console.log("event", JSON.parse(payload).event.name)
     return {
       statusCode: 200,
-      body: JSON.stringify({ msg: "hello" }),
+      body: JSON.stringify({ name }),
     }
   } catch (err) {
     console.log(err) // output to netlify function log
