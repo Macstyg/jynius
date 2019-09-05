@@ -1,9 +1,12 @@
 export async function handler(event, context) {
   try {
     const payload = event.body.split("=")[1]
-    console.log("payload", payload)
-    console.log("parsed payload", JSON.parse(payload))
-    console.log("event", JSON.parse(payload).event.name)
+    const normilizedPayload = decodeURI(payload)
+      .replace(/\+/g, " ")
+      .replace(/%3A/g, ": ")
+    console.log("payload", normilizedPayload)
+    console.log("parsed payload", JSON.parse(normilizedPayload))
+    console.log("event", JSON.parse(normilizedPayload).event.name)
     return {
       statusCode: 200,
       body: JSON.stringify({ name }),
